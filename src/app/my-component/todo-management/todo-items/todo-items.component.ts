@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, Input } from '@angular/core';
+import { TodoViewModel } from '../../../todo-view-model';
 @Component({
   selector: 'app-todo-items',
   standalone: true,
@@ -8,5 +8,9 @@ import { Component } from '@angular/core';
   styleUrl: './todo-items.component.css'
 })
 export class TodoItemsComponent {
+  @Input() todo!: TodoViewModel;
 
+  ngOnInit() {
+    console.log(this.todo);
+  }
 }

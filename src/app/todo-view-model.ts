@@ -1,5 +1,6 @@
 export interface TodoViewModel {
-    id : number;
-    title : string;
-    completed : boolean;
+  name: string;
+  creationDate: Date;
+  isDone: boolean;
+  completionDate?: Date;
 }
