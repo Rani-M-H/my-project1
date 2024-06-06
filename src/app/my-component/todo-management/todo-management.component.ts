@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-todo-management',
   standalone: true,
-  imports: [TodoItemsComponent , CommonModule , FormsModule   ],
+  imports: [TodoItemsComponent , CommonModule , FormsModule],
   templateUrl: './todo-management.component.html',
   styleUrl: './todo-management.component.css',
   
