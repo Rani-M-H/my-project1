@@ -1,15 +1,16 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 import { TodoViewModel } from '../../todo-view-model';
 import { TodoItemsComponent } from './todo-items/todo-items.component';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+
+//import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-management',
   standalone: true,
-  imports: [TodoItemsComponent , CommonModule , NgModule , FormsModule ],
+  imports: [TodoItemsComponent , CommonModule , FormsModule   ],
   templateUrl: './todo-management.component.html',
   styleUrl: './todo-management.component.css',
   

@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 import { TodoViewModel } from '../../../todo-view-model';
+import { CommonModule } from "@angular/common";
 @Component({
   selector: 'app-todo-items',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './todo-items.component.html',
   styleUrl: './todo-items.component.css'
 })
