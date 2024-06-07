@@ -1,14 +1,14 @@
-<div *ngFor="let viewModel of viewModels" class="chat-user">
-    <img [src]="viewModel.avatarUrl" alt="{{ viewModel.fullName }}" class="avatar">
-    <div class="user-details">
+<div *ngFor="let viewModel of viewModels" class="chat-user flex items-center justify-between p-60">
+    <img [src]="viewModel.avatarUrl" alt="{{ viewModel.fullName }}" class="avatar flex rounded-full h-20 w-20 ml-20">
+    <div class="user-details flex-grow font-medium text-lg ml-4">
       <h3>{{ viewModel.fullName }}</h3>
-      <p *ngIf="viewModel.isTyping">Typing...</p>
+      <p *ngIf="viewModel.isTyping" class="flex text-blue-600 font-medium">Typing...</p>
       <p *ngIf="!viewModel.isTyping">{{ viewModel.lastMessage ? (viewModel.lastMessage | date:'short') : 'No messages yet' }}</p>
-      <p *ngIf="viewModel.unreadMessages > 0">{{ viewModel.unreadMessages }}</p>
+      <!-- <p *ngIf="viewModel.unreadMessages > 0">{{ viewModel.unreadMessages }}</p> -->
     </div>
-    <div class="message-status">
+    <div class="message-status flex items-center">
       <span *ngIf="!viewModel.isTyping">{{ viewModel.lastMessage ? (viewModel.lastMessage | date:'shortTime') : '' }}</span>
-      <span *ngIf="viewModel.unreadMessages > 0" class="unread-badge">{{ viewModel.unreadMessages }}</span>
+      <span *ngIf="viewModel.unreadMessages > 0" class="unread-badge flex bg-red-600 text-white rounded-full items-center p-2 h-6 w-6 mr-80">{{ viewModel.unreadMessages }}</span>
       <img *ngIf="!viewModel.isTyping && viewModel.unreadMessages === 0" src="read-receipt-icon-url" alt="Read">
     </div>
   </div>
