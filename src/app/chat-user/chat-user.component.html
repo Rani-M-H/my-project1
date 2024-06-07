@@ -1,0 +1,14 @@
+<div *ngFor="let viewModel of viewModels" class="chat-user">
+    <img [src]="viewModel.avatarUrl" alt="{{ viewModel.fullName }}" class="avatar">
+    <div class="user-details">
+      <h3>{{ viewModel.fullName }}</h3>
+      <p *ngIf="viewModel.isTyping">Typing...</p>
+      <p *ngIf="!viewModel.isTyping">{{ viewModel.lastMessage ? (viewModel.lastMessage | date:'short') : 'No messages yet' }}</p>
+      <p *ngIf="viewModel.unreadMessages > 0">{{ viewModel.unreadMessages }}</p>
+    </div>
+    <div class="message-status">
+      <span *ngIf="!viewModel.isTyping">{{ viewModel.lastMessage ? (viewModel.lastMessage | date:'shortTime') : '' }}</span>
+      <span *ngIf="viewModel.unreadMessages > 0" class="unread-badge">{{ viewModel.unreadMessages }}</span>
+      <img *ngIf="!viewModel.isTyping && viewModel.unreadMessages === 0" src="read-receipt-icon-url" alt="Read">
+    </div>
+  </div>
